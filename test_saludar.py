@@ -4,7 +4,7 @@ import saludar
 class TestSaludar:
 
     def test_saludo1(self):
-        assert "Hooollla" == saludar.saludo1()
+        assert "Hola" == saludar.saludo1()
 
     def test_saludo2(self):
         assert "Buenos días" == saludar.saludo2()
