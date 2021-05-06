@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: ACtivar entorno virtual python
+    - name: Activar entorno virtual python
       run:  python3 -m venv venv
             source venv/bin/activate
     - name: Instalar dependencias        
@@ -24,4 +24,4 @@ jobs:
             flake8 --exclude=venv* --statistics
             pytest -v
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run:  docker build . --file Dockerfile --tag my-image-name:$(date +%s)
