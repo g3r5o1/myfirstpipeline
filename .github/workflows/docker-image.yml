@@ -15,8 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install dependencies
-      run:  python3 -m venv venv
-            source venv/bin/activate
+      run:  source venv/bin/activate
             pip install -r requirements.txt
     - name: run tests
       run:  source venv/bin/activate
