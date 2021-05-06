@@ -22,6 +22,6 @@ jobs:
       run: pytest -v
     - name: Build the Docker image
       run: #docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-           docker build -t poc/$IMAGE_NAME:$TAG .
+           docker build . --file Dockerfile -t poc/$IMAGE_NAME:$TAG .
            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
            docker push ideaslocas/$IMAGE_NAME:$TAG
