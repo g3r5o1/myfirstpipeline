@@ -6,8 +6,8 @@ ADD . /myfirstpipeline
 
 #RUN  apk add python3-venv
 
-RUN  sudo pip install --requirement ./requirements.txt
+RUN  pip install --requirement ./requirements.txt
 
-CMD  [ "python", "flake8 --exclude=venv* --statistics", "pytest -v" ]
+CMD  [ "python", "source venv/bin/activate" | "flake8 --exclude=venv* --statistics", "pytest -v" ]
 
 
