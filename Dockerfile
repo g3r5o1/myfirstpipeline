@@ -8,6 +8,6 @@ ADD . /myfirstpipeline
 
 RUN  pip install --requirement ./requirements.txt
 
-CMD  [ "python", "source venv/bin/activate" | "flake8 --exclude=venv* --statistics", "pytest -v" ]
+CMD  [ "python3 -m venv", "source venv/bin/activate" | "flake8 --exclude=venv* --statistics", "pytest -v" ]
 
 
