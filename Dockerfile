@@ -4,7 +4,7 @@ WORKDIR /myfirstpipeline
 
 ADD . /myfirstpipeline
 
-RUN apt-get install python3
+#RUN apt-get install python3
 
 RUN pip install -r requirements.txt
 
