@@ -10,7 +10,7 @@ RUN  apt-get update && apt-get upgrade
 
 #RUN  apt-get source requirements.txt
 
-RUN  apt-get install python3
+RUN  apt-get -f install python3
 
 RUN  python3 -m venv venv
 
