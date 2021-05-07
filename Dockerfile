@@ -4,7 +4,7 @@ WORKDIR /myfirstpipeline
 
 ADD . /myfirstpipeline
 
-RUN sudo apt-get install python3-venv
+RUN apt-get install python3-venv
 
 RUN source venv/bin/activate | pip install -r requirements.txt
 
