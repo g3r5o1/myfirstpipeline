@@ -25,6 +25,7 @@ jobs:
 #    - name: run tests
 #      run: pytest -v
     - name: Build the Docker image
-      run: source venv/bin/activate | docker build -t poc/$IMAGE_NAME:$TAG .
-           echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
-           docker push ideaslocas/$IMAGE_NAME:$TAG
+      run:  docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+           #source venv/bin/activate | docker build -t poc/$IMAGE_NAME:$TAG .
+           #echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+           #docker push ideaslocas/$IMAGE_NAME:$TAG
