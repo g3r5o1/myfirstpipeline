@@ -1,13 +1,13 @@
-FROM alpine:3.12
+FROM python:2-alpine
 
 WORKDIR /myfirstpipeline
 
 ADD . /myfirstpipeline
 
-RUN  apk add python3
+RUN  apk add python3-venv
 
 RUN  pip install --requirement ./requirements.txt
 
-RUN  flake8 --exclude=venv* --statistics | pytest -v
+CMD  [ "python", "flake8 --exclude=venv* --statistics", "pytest -v" ]
 
 
