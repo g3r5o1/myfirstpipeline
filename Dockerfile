@@ -4,7 +4,7 @@ WORKDIR /myfirstpipeline
 
 ADD . /myfirstpipeline
 
-RUN  apk add python3-venv
+#RUN  apk add python3-venv
 
 RUN  pip install --requirement ./requirements.txt
 
