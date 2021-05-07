@@ -6,7 +6,7 @@ ADD . /myfirstpipeline
 
 #RUN  apk add python3-venv
 
-RUN  python3 -venv pip install --requirement ./requirements.txt
+RUN  pip3 install virtualenv | virtualenv -p python3 venv | pip install --requirement ./requirements.txt
 
 CMD  [ "python3 -m venv", "source venv/bin/activate" | "flake8 --exclude=venv* --statistics", "pytest -v" ]
 
