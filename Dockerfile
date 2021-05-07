@@ -12,9 +12,9 @@ RUN  apt-get update && apt-get upgrade
 
 RUN  apt-get -y install python3
 
-RUN  apt-get -y install python3-venv
+RUN  apt-get -y install python3-venv | source venv/bin/activate | pip install -r requirements.txt
 
-RUN  python3 -m venv venv | source venv/bin/activate | flake8 --exclude=venv* --statistics | pytest -v
+#RUN  python3 -m venv venv | source venv/bin/activate | flake8 --exclude=venv* --statistics | pytest -v
 
 CMD  [ "source venv/bin/activate" | "flake8 --exclude=venv* --statistics", "pytest -v" ]
 
