@@ -17,7 +17,7 @@ jobs:
     - name: Install python3-venv
       run:  sudo apt-get install python3-venv
     - name: arrancado entorno virtual
-      run:  python3 -m venv venv | ./venv/bin/activate | pip install -r requerimients.txt | flake8 --exclude=venv* --statistics | pytest -v
+      run:  python3 -m venv venv | source /venv/bin/activate | pip install -r requerimients.txt 
     - name: install dependencies
       run:  pip install -r requirements.txt
     - name: run dependencies
