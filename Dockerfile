@@ -12,6 +12,8 @@ RUN  apt-get update && apt-get upgrade
 
 RUN  apt-get -y install python3
 
+RUN  apt-get -y install python3-venv
+
 RUN  python3 -m venv venv
 
 CMD  [ "source venv/bin/activate" | "flake8 --exclude=venv* --statistics", "pytest -v" ]
