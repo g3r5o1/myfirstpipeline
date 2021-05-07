@@ -18,14 +18,13 @@ jobs:
       run:  sudo apt-get install python3-venv
     - name: arrancado entorno virtual
       run:  source venv/bin/activate | pip install -r requirements.txt 
-    - name: install dependencies
-      run:  pip install -r requirements.txt
-    - name: run dependencies
-      run:  flake8 --exclude=venv* --statistics
+#    - name: install dependencies
+#      run:  pip install -r requirements.txt
     - name: run tests
-      run: pytest -v
+      run:  source venv/bin/activate | flake8 --exclude=venv* --statistics | pytest -v
+#    - name: run tests
+#      run: pytest -v
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-           #docker build -t poc/$IMAGE_NAME:$TAG .
-           #echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
-           #docker push ideaslocas/$IMAGE_NAME:$TAG
+      run: source venv/bin/activate | docker build -t poc/$IMAGE_NAME:$TAG .
+           echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+           docker push ideaslocas/$IMAGE_NAME:$TAG
