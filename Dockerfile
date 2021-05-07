@@ -1,13 +1,13 @@
-FROM ubuntu:latest
+FROM alpine:3.12
 
 WORKDIR /myfirstpipeline
 
 ADD . /myfirstpipeline
 
-#RUN apt-get install python3
+RUN apk install python3-venv
 
-RUN apt-get install -r requirements.txt
+RUN source venv/bin/activate | pip install -r requirements.txt
 
-RUN flake8 --exclude=venv* --statistics | pytest -v
+RUN source venv/bin/activate | flake8 --exclude=venv* --statistics | pytest -v
 
 
