@@ -25,7 +25,7 @@ jobs:
 #    - name: run tests
 #      run: pytest -v
     - name: Build the Docker image
-      run:  #docker build . --file Dockerfile --tag $IMAGE_NAME
-            source venv/bin/activate | docker build . --file Dockerfile --tag $IMAGE_NAME | docker push g3r5o1/$IMAGE_NAME:$TAG
+      run:  docker build -f Dockerfile --tag $IMAGE_NAME | docker push g3r5o1/$IMAGE_NAME:$TAG
+            #source venv/bin/activate | docker build . --file Dockerfile --tag $IMAGE_NAME | docker push g3r5o1/$IMAGE_NAME:$TAG
             #echo $DOCKER_PWD | docker login -u ${{ github.actor }} --password-stdin
             #docker push g3r5o1/$IMAGE_NAME:$TAG
