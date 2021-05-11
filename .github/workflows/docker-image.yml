@@ -62,5 +62,6 @@ jobs:
             #echo $DOCKER_PWD | docker login -u ${{ github.actor }} --password-stdin
             #docker push g3r5o1/$IMAGE_NAME:$TAG
             docker build -t poc/$IMAGE_NAME:$TAG .
-            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-L0sG00nie5.
-            docker push g3r5o1/$IMAGE_NAME:$TAG
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin | docker push g3r5o1/$IMAGE_NAME:$TAG
+            #echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-L0sG00nie5.
+            #docker push g3r5o1/$IMAGE_NAME:$TAG
